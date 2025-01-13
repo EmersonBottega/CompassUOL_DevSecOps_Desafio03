@@ -4,7 +4,7 @@
 
 ### Este repositório contém a arquitetura e instruções necessários para solucionar o problema da empresa "Fast Engineering".  
 > [!Important]
-> - #### A empresa Fast Engineering possui um eCommerce que está crescendo e eles precisam mudar seu ambiemte On-Premise para um ambiente em nuvem como AWS.
+> - #### A empresa Fast Engineering possui um eCommerce que está crescendo e eles precisam mudar seu ambiemte On-Premise (físico), para um ambiente em nuvem.
 
 #### Solução atual da empresa Fast Engineering:
 - 01 servidor para Banco de Dados Mysql (500GB de dados, 10Gb de RAM, 3
@@ -19,5 +19,18 @@ RAM, 2 Core CPU);
 
 #### Arquitetura:
 ![Diagrama on-premise](https://github.com/user-attachments/assets/262783ff-c1e3-4e4e-a0d5-a33602fa57c9)
+
+### Requisitos da empresa:
+> [!Warning]
+> ### Modernizar o sistema acima para AWS, seguir as melhores práticas de arquitetura em Cloud AWS, e seguir as seguintes diretrizes:
+
+- Ambiente Kubernetes;
+- Banco de dados gerenciado (PaaS e Multi AZ);
+- Backup de dados;
+- Sistema para persistência de objetos (imagens, vídeos etc.);
+- Segurança;
+
+> [!Warning]
+> ### Antes de migrar para a nova estrutura, é necessário fazer uma migração “lift-and-shift” ou “as-is”, e apenas depois, promover a modificação para a nova estrutura em Kubernetes.
 
 # Solução
