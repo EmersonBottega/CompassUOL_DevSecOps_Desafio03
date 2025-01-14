@@ -1,6 +1,6 @@
 # CompassUOL Desafio03 - Arquitetura para a empresa "Fast Engineering S/A"
 
-# Visão Geral
+# Visão Geral :monocle_face:
 
 ### Este repositório contém a arquitetura e instruções necessários para solucionar o problema da empresa "Fast Engineering".  
 > [!Important]
@@ -20,21 +20,24 @@ RAM, 2 Core CPU);
 #### Arquitetura:
 ![Diagrama on-premise](https://github.com/user-attachments/assets/262783ff-c1e3-4e4e-a0d5-a33602fa57c9)
 
-### Requisitos da empresa:
-> [!Warning]
-> ### Modernizar o sistema acima para AWS, seguir as melhores práticas de arquitetura em Cloud AWS, e seguir as seguintes diretrizes:
-
-- Ambiente Kubernetes;
-- Banco de dados gerenciado (PaaS e Multi AZ);
-- Backup de dados;
-- Sistema para persistência de objetos (imagens, vídeos etc.);
-- Segurança;
+> [!Important]
+> ### Requisitos da empresa ⚠
 
 > [!Warning]
+> ### Etapa 1️⃣
 > ### Antes de migrar para a nova estrutura, é necessário fazer uma migração “lift-and-shift” ou “as-is”, e apenas depois, promover a modificação para a nova estrutura em Kubernetes.
 
-# Solução
-## Etapa 1
+> [!Warning]
+> ### Etapa 2️⃣
+> ### Modernizar o sistema acima para AWS, seguindo as melhores práticas de arquitetura em Cloud AWS, e seguir as seguintes diretrizes:
+> - Ambiente Kubernetes;
+> - Banco de dados gerenciado (PaaS e Multi AZ);
+> - Backup de dados;
+> - Sistema para persistência de objetos (imagens, vídeos etc.);
+> - Segurança.
+
+# Solução :bulb:
+## Etapa 1️⃣
 ### Passo 1 - VPC
 Configure uma VPC para usar nos serviços da AWS e para ter uma maior segurança. <br>
 Contendo:
@@ -53,13 +56,13 @@ Crie um usuário IAM para gerar as credenciais da AWS que serão usadas pelo AWS
 ### Passo 4 - SCT/DMS
 Use o AWS SCT para migrar o esquema e ajustar os scripts SQL para que sejam compatíveis com o banco de destino. Após a conversão e ajuste dos esquemas, use o DMS para migrar os dados (e opcionalmente mantê-los sincronizados).
 
-### Passo 5 - MGN
+### Passo 5 - S3
+Utilize para armazenar backups e arquivos estáticos da aplicação.
+
+### Passo 6 - MGN
 Para fazer a migração dos servidores de front-end e back-end:
 - No ambiente On-premise, instale o agente MGN nos servidores de front-end e back-end.
 - Configure os servidores de origem e destino.
-
-### Passo 6 - S3
-Utilize para armazenar backups e arquivos estáticos da aplicação.
 
 ### Passo 7 - Application Load Balancer
 Use o Application Load Balancer, pois ele pode direcionar o tráfego para diferentes grupos de Auto Scaling.
