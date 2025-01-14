@@ -34,3 +34,13 @@ RAM, 2 Core CPU);
 > ### Antes de migrar para a nova estrutura, é necessário fazer uma migração “lift-and-shift” ou “as-is”, e apenas depois, promover a modificação para a nova estrutura em Kubernetes.
 
 # Solução
+## Etapa 1
+### Passo 1 - VPC
+Configure uma VPC para usar nos serviços da AWS e para ter uma maior segurança. <br>
+Contendo:
+- 02 subnets públicas.
+- 02 subnets privadas.
+
+### Passo 2 - Security Groups
+Crie grupos de segurança personalizados para cada serviço que será utilizado, personalizando as regras de entrada e/ou saída.
+- Sendo os grupos para: EC2, Load Balancer, RDS, S3
