@@ -44,3 +44,14 @@ Contendo:
 ### Passo 2 - Security Groups
 Crie grupos de segurança personalizados para cada serviço que será utilizado, personalizando as regras de entrada e/ou saída.
 - Sendo os grupos para: EC2, Load Balancer, RDS, S3
+
+### Passo 3 - Usuário IAM
+Crie um usuário IAM para gerar as credenciais da AWS que serão usadas pelo AWS Replication Agent. 
+> [!Warning]
+> - Configure permissões mínimas necessárias para predefinir controles de permissão.
+
+### Passo 5 - MGN
+Para fazer a migração dos servidores de front-end e back-end:
+- No ambiente On-premise, instale o agente MGN nos servidores de front-end e back-end.
+- Configure os servidores de origem e destino.
+
