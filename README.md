@@ -50,8 +50,13 @@ Crie um usuário IAM para gerar as credenciais da AWS que serão usadas pelo AWS
 > [!Warning]
 > - Configure permissões mínimas necessárias para predefinir controles de permissão.
 
+### Passo 4 - SCT/DMS
+Usar o AWS SCT para migrar o esquema e ajustar os scripts SQL para que sejam compatíveis com o banco de destino. Após a conversão e ajuste dos esquemas, o DMS é usado para migrar os dados (e opcionalmente mantê-los sincronizados).
+
 ### Passo 5 - MGN
 Para fazer a migração dos servidores de front-end e back-end:
 - No ambiente On-premise, instale o agente MGN nos servidores de front-end e back-end.
 - Configure os servidores de origem e destino.
 
+### Passo 6 - S3
+Utilizado para armazenar backups e arquivos estáticos da aplicação.
