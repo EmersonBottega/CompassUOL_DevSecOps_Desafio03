@@ -90,3 +90,7 @@ Para os servidores de front-end e back-end, crie duas templates que serão utili
 
 ### Passo 9 - Cloud Watch
 Use o CloudWatch para monitorar métricas, logs e desempenho dos recursos AWS, garantindo operação eficiente e identificando problemas da aplicação.
+
+### Passo 10 - AWS Budgets
+Use para definir orçamentos personalizados para rastrear os custos da empresa, uso e para receber alertas via email, como um aviso de que o valor mensal chegou em $1.000.
+
