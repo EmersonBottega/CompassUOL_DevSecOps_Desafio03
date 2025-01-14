@@ -51,7 +51,7 @@ Crie um usuário IAM para gerar as credenciais da AWS que serão usadas pelo AWS
 > - Configure permissões mínimas necessárias para predefinir controles de permissão.
 
 ### Passo 4 - SCT/DMS
-Usar o AWS SCT para migrar o esquema e ajustar os scripts SQL para que sejam compatíveis com o banco de destino. Após a conversão e ajuste dos esquemas, o DMS é usado para migrar os dados (e opcionalmente mantê-los sincronizados).
+Use o AWS SCT para migrar o esquema e ajustar os scripts SQL para que sejam compatíveis com o banco de destino. Após a conversão e ajuste dos esquemas, use o DMS para migrar os dados (e opcionalmente mantê-los sincronizados).
 
 ### Passo 5 - MGN
 Para fazer a migração dos servidores de front-end e back-end:
@@ -59,4 +59,28 @@ Para fazer a migração dos servidores de front-end e back-end:
 - Configure os servidores de origem e destino.
 
 ### Passo 6 - S3
-Utilizado para armazenar backups e arquivos estáticos da aplicação.
+Utilize para armazenar backups e arquivos estáticos da aplicação.
+
+### Passo 7 - Application Load Balancer
+Use o Application Load Balancer, pois ele pode direcionar o tráfego para diferentes grupos de Auto Scaling.
+
+> [!Tip]
+> #### 03 Estratégias para direcionar o tráfego: 
+> - URLs (exemplo: /api/* vai para o backend e / vai para o frontend).
+> - Hosts (exemplo: api.example.com para o backend e example.com para o frontend).
+> - Cabeçalhos, cookies ou outros parâmetros.
+
+### Passo 8 - Templates de EC2 e Auto Scaling Groups
+Para os servidores de front-end e back-end, crie duas templates que serão utilizadas no Auto Scaling com o intuito de garantir a escalabilidade automática das instâncias EC2.
+
+- Crie o primeiro template que será do back-end.
+> [!Tip]
+> - Configure na subnet privada.
+
+- Crie o segundo template que será do front-end.
+> [!Tip]
+> - Configure na subnet pública.
+
+- Por último configure dois Auto Scaling groups, um com a template do back-end e o outro com a template do front-end.
+> [!Tip]
+> - Os dois Auto Scaling groups contém o mesmo Load Balancer.
