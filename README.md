@@ -87,3 +87,6 @@ Para os servidores de front-end e back-end, crie duas templates que serão utili
 - Por último configure dois Auto Scaling groups, um com a template do back-end e o outro com a template do front-end.
 > [!Tip]
 > - Os dois Auto Scaling groups contém o mesmo Load Balancer.
+
+### Passo 9 - Cloud Watch
+Use o CloudWatch para monitorar métricas, logs e desempenho dos recursos AWS, garantindo operação eficiente e identificando problemas da aplicação.
