@@ -17,7 +17,7 @@ Core CPU);
 carga e que armazena estáticos como fotos e links. (5GB de dados, 4Gb de
 RAM, 2 Core CPU);
 
-#### Arquitetura:
+#### Arquitetura 🛠
 ![Diagrama on-premise](https://github.com/user-attachments/assets/262783ff-c1e3-4e4e-a0d5-a33602fa57c9)
 
 > [!Important]
@@ -38,6 +38,9 @@ RAM, 2 Core CPU);
 
 # Solução :bulb:
 ## Etapa 1️⃣
+### Arquitetura 🛠
+![Etapa-1 drawio](https://github.com/user-attachments/assets/af0cc023-eff8-4eef-8be9-bffa2090c326)
+
 ### Passo 1 - VPC
 Configure uma VPC para usar nos serviços da AWS e para ter uma maior segurança. <br>
 Contendo:
@@ -92,5 +95,9 @@ Para os servidores de front-end e back-end, crie duas templates que serão utili
 Use o CloudWatch para monitorar métricas, logs e desempenho dos recursos AWS, garantindo operação eficiente e identificando problemas da aplicação.
 
 ### Passo 10 - AWS Budgets
-Use para definir orçamentos personalizados para rastrear os custos da empresa, uso e para receber alertas via email, como um aviso de que o valor mensal chegou em $1.000.
+Use para definir orçamentos personalizados para rastrear os custos da empresa, uso e para receber alertas via email, como um aviso de que o valor mensal chegou em $2.000,00.
+
+### Preço de acordo com a AWS Pricing Calculator 💲
+![AWSCalculator](https://github.com/user-attachments/assets/c1fc0831-ef44-4cec-8079-01e0fe0243e1)
+
 
