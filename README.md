@@ -2,6 +2,11 @@
 
 # Visão Geral :monocle_face:
 
+### Tecnologias Utilizadas 👩‍💻
+- Windows 10 (Sistema Operacional);
+- Draw.io (Desenho das arquiteturas);
+- AWS (Serviços de Cloud).
+
 ### Este repositório contém a arquitetura e instruções necessários para solucionar o problema da empresa "Fast Engineering".  
 > [!Important]
 > - #### A empresa Fast Engineering possui um eCommerce que está crescendo e eles precisam mudar seu ambiemte On-Premise (físico), para um ambiente em nuvem.
@@ -39,7 +44,7 @@ RAM, 2 Core CPU);
 # Solução :bulb:
 ## Etapa 1️⃣
 ### Arquitetura 🛠
-![Etapa-1 drawio](https://github.com/user-attachments/assets/af0cc023-eff8-4eef-8be9-bffa2090c326)
+![Etapa-1](https://github.com/user-attachments/assets/60a77642-a39c-4f0c-a9f9-2c4b1269afa5)
 
 ### Passo 1 - VPC
 Configure uma VPC para usar nos serviços da AWS e para ter uma maior segurança. <br>
@@ -108,5 +113,4 @@ Use para definir orçamentos personalizados para rastrear os custos da empresa, 
 
 ### Preço de acordo com a AWS Pricing Calculator 💲
 ![AWSCalculator](https://github.com/user-attachments/assets/c1fc0831-ef44-4cec-8079-01e0fe0243e1)
-
 
