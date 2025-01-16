@@ -97,6 +97,15 @@ Use o CloudWatch para monitorar métricas, logs e desempenho dos recursos AWS, g
 ### Passo 10 - AWS Budgets
 Use para definir orçamentos personalizados para rastrear os custos da empresa, uso e para receber alertas via email, como um aviso de que o valor mensal chegou em $2.000,00.
 
+### Requisitos de Segurança:
+- Configuração de VPC isolada com subnets públicas e privadas.
+- Regras de Security Groups limitando acesso.
+- Configuração de IAM com permissões mínimas necessárias.
+
+### Processo de Backup:
+- Backup automático habilitado no RDS MySQL (snapshots diários e retenção de 7 dias).
+- Configuração de ciclo de vida no S3 para retenção e arquivamento de objetos.
+
 ### Preço de acordo com a AWS Pricing Calculator 💲
 ![AWSCalculator](https://github.com/user-attachments/assets/c1fc0831-ef44-4cec-8079-01e0fe0243e1)
 
