@@ -111,6 +111,22 @@ Use para definir orçamentos personalizados para rastrear os custos da empresa, 
 - Backup automático habilitado no RDS MySQL (snapshots diários e retenção de 7 dias).
 - Configuração de ciclo de vida no S3 para retenção e arquivamento de objetos.
 
-### Preço de acordo com a AWS Pricing Calculator 💲
-![AWSCalculator](https://github.com/user-attachments/assets/c1fc0831-ef44-4cec-8079-01e0fe0243e1)
+## Preço de acordo com a AWS Pricing Calculator 💲
 
+### Custo da migração:
+
+![image](https://github.com/user-attachments/assets/fa279815-e50a-4a66-8062-ef6b2207c46e)
+
+#### Detalhes:
+- <b>VPC:</b> Configurada com NAT e IPv4 público, atendendo à arquitetura proposta;
+- <b>EC2:</b> Duas instâncias EC2 (Back-end e Front-end) do tipo "t3.medium" (2vCPU, Memory: 4 GiB). Caso seja necessário, você pode optar por aumentar a capacidade conforme sua necessidade;
+- <b>RDS:</b> Uma instância RDS para banco de dados MySQL, configurada como "db.t3.large" (vCPU: 2, Memory: 8 GiB) para priorizar economia. Para maior desempenho, recomendamos "db.t3.xlarge" (vCPU: 4, Memory: 16 GiB), que oferece mais memória RAM e CPU;
+- <b>S3:</b> Com capacidade de 500 GB;
+
+<b>OBS:</b> O AWS Application Migration Service não possui custo no plano gratuito, que inclui 2.160 horas ou 90 dias de uso contínuo. Contudo, os custos de recursos criados conforme necessário (como EC2, EBS, etc.) não estão incluídos. Por esse motivo, já estamos estimando esses valores.
+
+### Custo manter ambiente AWS mensalmente:
+
+![image](https://github.com/user-attachments/assets/552e55e8-c09a-43c6-953e-23e0b4159e69)
+
+<b>OBS:</b> Mantendo os padrões citados na migração, porem adicionado um Application Load Balancer, CloudWatch e Budgets.
