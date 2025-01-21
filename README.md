@@ -136,7 +136,7 @@ Use para definir orçamentos personalizados para rastrear os custos da empresa, 
 
 ### Custo para manter ambiente AWS mensalmente:
 
-![image](https://github.com/user-attachments/assets/f6f0b3ab-25d9-474a-b82a-d0e1c105a877)
+![image](https://github.com/user-attachments/assets/4cf5e9b9-60e9-4a48-96e6-00efb5e95f79)
 
 <b>OBS:</b> Mantendo os padrões citados na migração, porém adicionando um Application Load Balancer, CloudWatch e Budgets.
 
@@ -214,3 +214,5 @@ Use para definir orçamentos personalizados para rastrear os custos da empresa, 
 ## Preços de acordo com a AWS Pricing Calculator 💲
 
 ![image](https://github.com/user-attachments/assets/18be134a-b75a-4f35-8d14-cf8a614a91ec)
+
+<b>Detalhes:</b> Substituindo as instâncias EC2 por um cluster Kubernetes utilizando o EKS combinado com o ECR. As máquinas, como RDS, e os serviços de armazenamento EBS e S3, permanecem iguais aos configurados no ambiente anterior. Agora, também foi adicionada a integração com o GuardDuty para reforçar a segurança.
