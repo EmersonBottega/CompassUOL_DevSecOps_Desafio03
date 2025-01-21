@@ -44,7 +44,7 @@ RAM, 2 Core CPU);
 # Solução :bulb:
 ## Etapa 1️⃣
 ### Arquitetura 🛠
-![Etapa-1](https://github.com/user-attachments/assets/60a77642-a39c-4f0c-a9f9-2c4b1269afa5)
+![Etapa-1](https://github.com/user-attachments/assets/df1cbdee-8a4f-4e70-8f3c-de5fb04ee304)
 
 ### Passo 1 - VPC
 Configure uma VPC para usar nos serviços da AWS e para ter uma maior segurança. <br>
@@ -139,7 +139,7 @@ Use para definir orçamentos personalizados para rastrear os custos da empresa, 
 
 ## Etapa 2️⃣
 ### Arquitetura 🛠
-![Etapa-2 drawio](https://github.com/user-attachments/assets/fdfc17b5-b564-45d4-aca8-42a7867a0150)
+![Etapa-2](https://github.com/user-attachments/assets/1abfc13b-b3fd-43cc-8620-e7fc5de0f1f6)
 
 ### Passo 1 - VPC
 Configure uma VPC para usar nos serviços da AWS e para ter uma maior segurança. <br>
