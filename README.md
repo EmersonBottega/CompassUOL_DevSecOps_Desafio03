@@ -78,7 +78,10 @@ Para fazer a migração dos servidores de front-end e back-end:
 - No ambiente On-premise, instale o agente MGN nos servidores de front-end e back-end.
 - Configure os servidores de origem e destino.
 
-### Passo 8 - Application Load Balancer
+### Passo 8 - EBS
+Use para oferecer desempenho consistente e escalabilidade. Os volumes podem ser redimensionados dinamicamente, permitindo que os usuários aumentem ou diminuam a capacidade de armazenamento conforme necessário.
+
+### Passo 9 - Application Load Balancer
 Use o Application Load Balancer, pois ele pode direcionar o tráfego para diferentes grupos de Auto Scaling.
 
 > [!Tip]
@@ -87,7 +90,7 @@ Use o Application Load Balancer, pois ele pode direcionar o tráfego para difere
 > - Hosts (exemplo: api.example.com para o backend e example.com para o frontend).
 > - Cabeçalhos, cookies ou outros parâmetros.
 
-### Passo 9 - Templates de EC2 e Auto Scaling Groups
+### Passo 10 - Templates de EC2 e Auto Scaling Groups
 Para os servidores de front-end e back-end, crie duas templates que serão utilizadas no Auto Scaling com o intuito de garantir a escalabilidade automática das instâncias EC2.
 
 - Crie o primeiro template que será do back-end.
@@ -102,10 +105,10 @@ Para os servidores de front-end e back-end, crie duas templates que serão utili
 > [!Tip]
 > - Os dois Auto Scaling groups contém o mesmo Load Balancer.
 
-### Passo 10 - Cloud Watch
+### Passo 11 - Cloud Watch
 Use o CloudWatch para monitorar métricas, logs e desempenho dos recursos AWS, garantindo operação eficiente e identificando problemas da aplicação.
 
-### Passo 11 - AWS Budgets
+### Passo 12 - AWS Budgets
 Use para definir orçamentos personalizados para rastrear os custos da empresa, uso e para receber alertas via email, como um aviso de que o valor mensal chegou em $2.000,00.
 
 ### Requisitos de Segurança:
