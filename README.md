@@ -136,7 +136,7 @@ Use para definir orçamentos personalizados para rastrear os custos da empresa, 
 
 ### Custo para manter ambiente AWS mensalmente:
 
-![image](https://github.com/user-attachments/assets/552e55e8-c09a-43c6-953e-23e0b4159e69)
+![image](https://github.com/user-attachments/assets/f6f0b3ab-25d9-474a-b82a-d0e1c105a877)
 
 <b>OBS:</b> Mantendo os padrões citados na migração, porém adicionando um Application Load Balancer, CloudWatch e Budgets.
 
@@ -213,4 +213,4 @@ Use para definir orçamentos personalizados para rastrear os custos da empresa, 
 
 ## Preços de acordo com a AWS Pricing Calculator 💲
 
-
+![image](https://github.com/user-attachments/assets/18be134a-b75a-4f35-8d14-cf8a614a91ec)
