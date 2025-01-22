@@ -47,7 +47,7 @@ RAM, 2 Core CPU);
 ![Etapa-1 Migrar](https://github.com/user-attachments/assets/9ec1fd53-d068-477f-a739-aeea30d85538)
 
 ### Arquitetura do Ambiente 🛠
-![Etapa-1 ambiente](https://github.com/user-attachments/assets/0d9a167c-897a-45f0-a9e4-7a2fa23381ef)
+![Etapa-1 ambiente](https://github.com/user-attachments/assets/0d14a8d6-6bbd-4d7f-924a-1c58f527a288)
 
 ### Passo 1 - VPC
 Configure uma VPC para usar nos serviços da AWS e para ter uma maior segurança. <br>
@@ -144,8 +144,8 @@ Use para definir orçamentos personalizados para rastrear os custos da empresa, 
 <b>OBS:</b> Mantendo os padrões citados na migração, porém adicionando um Application Load Balancer, CloudWatch e Budgets.
 
 ## Etapa 2️⃣
-### Arquitetura 🛠
-![Etapa-2](https://github.com/user-attachments/assets/1abfc13b-b3fd-43cc-8620-e7fc5de0f1f6)
+### Arquitetura do Ambiente 🛠
+![Etapa-2 ambiente](https://github.com/user-attachments/assets/2476150a-cf20-4706-a9b9-ac872b75bfad)
 
 ### Passo 1 - VPC
 Configure uma VPC para usar nos serviços da AWS e para ter uma maior segurança. <br>
