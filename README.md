@@ -43,8 +43,11 @@ RAM, 2 Core CPU);
 
 # Solução :bulb:
 ## Etapa 1️⃣
-### Arquitetura 🛠
-![Etapa-1](https://github.com/user-attachments/assets/df1cbdee-8a4f-4e70-8f3c-de5fb04ee304)
+### Arquitetura da Migração 🛠
+![Etapa-1 Migrar](https://github.com/user-attachments/assets/9ec1fd53-d068-477f-a739-aeea30d85538)
+
+### Arquitetura do Ambiente 🛠
+![Etapa-1 Ambiente](https://github.com/user-attachments/assets/27c59de2-b604-4ff7-9779-a3ea2b2e3b7a)
 
 ### Passo 1 - VPC
 Configure uma VPC para usar nos serviços da AWS e para ter uma maior segurança. <br>
