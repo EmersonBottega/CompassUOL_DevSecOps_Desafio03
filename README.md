@@ -47,7 +47,7 @@ RAM, 2 Core CPU);
 ![Etapa-1 Migrar](https://github.com/user-attachments/assets/9ec1fd53-d068-477f-a739-aeea30d85538)
 
 ### Arquitetura do Ambiente 🛠
-![Etapa-1 Ambiente](https://github.com/user-attachments/assets/27c59de2-b604-4ff7-9779-a3ea2b2e3b7a)
+![Etapa-1 ambiente](https://github.com/user-attachments/assets/0d9a167c-897a-45f0-a9e4-7a2fa23381ef)
 
 ### Passo 1 - VPC
 Configure uma VPC para usar nos serviços da AWS e para ter uma maior segurança. <br>
@@ -188,21 +188,18 @@ Use o Application Load Balancer, pois ele pode direcionar o tráfego para difere
 > - Hosts (exemplo: api.example.com para o backend e example.com para o frontend).
 > - Cabeçalhos, cookies ou outros parâmetros.
 
-### Passo 9 - EBS
-Use para oferecer desempenho consistente e escalabilidade. Os volumes podem ser redimensionados dinamicamente, permitindo que os usuários aumentem ou diminuam a capacidade de armazenamento conforme necessário.
-
-### Passo 10 - Elastic Kubernetes Service
+### Passo 9 - Elastic Kubernetes Service
 Para um ambiente com Kubernetes:
 - Implemente policies no Kubernetes.
 - Configurar Network Policies e Secrets.
 
-### Passo 11 - Cloud Watch
+### Passo 10 - Cloud Watch
 Use o CloudWatch para monitorar métricas, logs e desempenho dos recursos AWS, garantindo operação eficiente e identificando problemas da aplicação.
 
-### Passo 12 - Guard Duty
+### Passo 11 - Guard Duty
 Use para analisar todo o ambiente AWS em busca de possíveis ameaças, como IP's maliciosos.
 
-### Passo 13 - AWS Budgets
+### Passo 12 - AWS Budgets
 Use para definir orçamentos personalizados para rastrear os custos da empresa, uso e para receber alertas via email, como um aviso de que o valor mensal chegou em $2.000,00.
 
 ### Requisitos de Segurança:
