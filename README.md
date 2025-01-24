@@ -49,43 +49,43 @@ RAM, 2 Core CPU).
 ### Arquitetura do Ambiente Modernizado 🛠
 ![Etapa-1 ambiente](https://github.com/user-attachments/assets/0d14a8d6-6bbd-4d7f-924a-1c58f527a288)
 
-### Serviços da AWS utilizados:
+### Serviços da AWS utilizados ☁
 
-### VPC
+### ![Virtual-private-cloud-VPC_32](https://github.com/user-attachments/assets/76334271-b989-4d60-b748-bf4f6084ebf9) VPC
 Configure uma VPC para usar nos serviços da AWS e para ter uma maior segurança. <br>
 Contendo:
 - 02 subnets públicas.
 - 02 subnets privadas.
 
-### Usuário IAM
+### ![Res_AWS-Identity-Access-Management_IAM-Roles-Anywhere_48](https://github.com/user-attachments/assets/31bf5f4a-7877-4243-a8b0-a8784bb496fd) Usuário IAM
 Crie um usuário IAM para gerar as credenciais da AWS que serão usadas pelo AWS Replication Agent. 
 > [!Warning]
 > - Configure permissões mínimas necessárias para predefinir controles de permissão.
 
-### SCT/DMS
+### ![Res_AWS-Database-Migration-Service_Database-migration-workflow-or-job_48](https://github.com/user-attachments/assets/f8608a94-a137-4b46-a065-7a6853bd86b4) SCT/DMS
 Use o AWS SCT para migrar o esquema e ajustar os scripts SQL para que sejam compatíveis com o banco de destino. Após a conversão e ajuste dos esquemas, use o DMS para migrar os dados (e opcionalmente mantê-los sincronizados).
 
-### RDS (MySql)
+### ![Res_Amazon-Aurora-MySQL-Instance_48](https://github.com/user-attachments/assets/2787e9de-6725-4d28-8d16-d87805fc2239) RDS (MySql)
 Criar um bando de dados relacional para usar na migração e para a aplicação.
 - Crie um banco relacional MySql.
 - Habilite Multi-AZ.
 - Habilite backup automático.
 
-### S3
+### ![Res_Amazon-Simple-Storage-Service_S3-Express-One-Zone_48](https://github.com/user-attachments/assets/ee1e769e-0f93-4854-8df7-80aa9bebce94) S3
 Utilize para armazenar backups e arquivos estáticos da aplicação.
 
-### MGN
+### ![Arch_AWS-Application-Migration-Service_32](https://github.com/user-attachments/assets/15c6c0c9-12fb-4e0d-8e65-91cba6f9fff4) MGN
 Para fazer a migração dos servidores de front-end e back-end:
 - No ambiente On-premise, instale o agente MGN nos servidores de front-end e back-end.
 - Configure os servidores de origem e destino.
 
-### Replication Server
-Servidores de replicação são instâncias do Amazon EC2 usadas para replicar dados entre os servidores de origem e a AWS.
+> [!Warning]
+> - Use um Replication Server: Servidores de replicação são instâncias do Amazon EC2 usadas para replicar dados entre os servidores de origem e a AWS.
 
-### EBS
+### ![Res_Amazon-Elastic-Block-Store_Multiple-Volumes_48](https://github.com/user-attachments/assets/dbb4adad-3fda-4710-a400-7c11c92bb21d) EBS
 Use para oferecer desempenho consistente e escalabilidade. Os volumes podem ser redimensionados dinamicamente, permitindo que os usuários aumentem ou diminuam a capacidade de armazenamento conforme necessário.
 
-### Application Load Balancer
+### ![Res_Elastic-Load-Balancing_Application-Load-Balancer_48](https://github.com/user-attachments/assets/6ebfdb84-4166-4824-804c-39354cbebd72) Application Load Balancer
 Use o Application Load Balancer, pois ele pode direcionar o tráfego para diferentes grupos de Auto Scaling.
 
 > [!Tip]
@@ -94,7 +94,7 @@ Use o Application Load Balancer, pois ele pode direcionar o tráfego para difere
 > - Hosts (exemplo: api.example.com para o backend e example.com para o frontend).
 > - Cabeçalhos, cookies ou outros parâmetros.
 
-### Templates de EC2 e Auto Scaling Groups
+### ![Res_Amazon-EC2_Auto-Scaling_48](https://github.com/user-attachments/assets/0943c9b0-aa9e-4c21-b11a-3447d7b26d79) Templates de EC2 e Auto Scaling Groups
 Para os servidores de front-end e back-end, crie duas templates que serão utilizadas no Auto Scaling com o intuito de garantir a escalabilidade automática das instâncias EC2.
 
 - Crie o primeiro template que será do back-end.
@@ -109,16 +109,16 @@ Para os servidores de front-end e back-end, crie duas templates que serão utili
 > [!Tip]
 > - Os dois Auto Scaling groups contém o mesmo Load Balancer.
 
-### Route 53
+### ![Res_Amazon-Route-53_Readiness-Checks_48](https://github.com/user-attachments/assets/36b62ffe-ec76-4bdd-8285-4403158eb6bf) Route 53
 Use para conectar as requisições do usuário à aplicações da Internet executadas na AWS ou on-premises.
 
-### Cloud Watch
+### ![Arch_Amazon-CloudWatch_32](https://github.com/user-attachments/assets/bf3a35da-8579-48aa-8517-3a46ad635865) Cloud Watch
 Use o CloudWatch para monitorar métricas, logs e desempenho dos recursos AWS, garantindo operação eficiente e identificando problemas da aplicação.
 
-### Simple Email Service
+### ![Res_Amazon-Simple-Email-Service_Email_48](https://github.com/user-attachments/assets/caf6965f-ea98-41bf-992f-be3308459792) Simple Email Service
 Use para na aplicação para automação de e-mails de alto volume.
 
-### AWS Budgets
+### ![Arch_AWS-Budgets_32](https://github.com/user-attachments/assets/aa1cd7a7-443d-4f46-a7b4-eb3405f48143) AWS Budgets
 Use para definir orçamentos personalizados para rastrear os custos da empresa e para receber alertas via email, como um aviso de que o valor mensal chegou em $2.000,00.
 
 ### Requisitos de Segurança:
@@ -154,26 +154,26 @@ Use para definir orçamentos personalizados para rastrear os custos da empresa e
 ### Arquitetura do Ambiente Final pós migração com Kubernetes 🛠
 ![Etapa-2 ambiente](https://github.com/user-attachments/assets/2476150a-cf20-4706-a9b9-ac872b75bfad)
 
-### Serviços da AWS utilizados:
+### Serviços da AWS utilizados ☁
 
-### VPC
+### ![Virtual-private-cloud-VPC_32](https://github.com/user-attachments/assets/76334271-b989-4d60-b748-bf4f6084ebf9) VPC
 Configure uma VPC para usar nos serviços da AWS e para ter uma maior segurança. <br>
 Contendo:
 - 02 subnets públicas.
 - 02 subnets privadas.
 
-### Usuário IAM
+### ![Res_AWS-Identity-Access-Management_IAM-Roles-Anywhere_48](https://github.com/user-attachments/assets/31bf5f4a-7877-4243-a8b0-a8784bb496fd) Usuário IAM
 Crie um usuário IAM para gerar as credenciais da AWS que serão usadas pelo AWS Replication Agent. 
 > [!Warning]
 > - Configure permissões mínimas necessárias para predefinir controles de permissão.
 
-### RDS (MySql)
+### ![Res_Amazon-Aurora-MySQL-Instance_48](https://github.com/user-attachments/assets/2787e9de-6725-4d28-8d16-d87805fc2239) RDS (MySql)
 Criar um bando de dados relacional para usar na migração e para a aplicação.
 - Crie um banco relacional MySql.
 - Habilite Multi-AZ.
 - Habilite backup automático.
 
-### Application Load Balancer
+### ![Res_Elastic-Load-Balancing_Application-Load-Balancer_48](https://github.com/user-attachments/assets/6ebfdb84-4166-4824-804c-39354cbebd72) Application Load Balancer
 Use o Application Load Balancer, pois ele pode direcionar o tráfego para diferentes grupos de Auto Scaling.
 
 > [!Tip]
@@ -190,7 +190,7 @@ Para um ambiente com Kubernetes:
 - Implemente policies no Kubernetes.
 - Configurar Network Policies e Secrets.
 
-### Route 53
+### ![Res_Amazon-Route-53_Readiness-Checks_48](https://github.com/user-attachments/assets/36b62ffe-ec76-4bdd-8285-4403158eb6bf) Route 53
 Use para conectar as requisições do usuário à aplicações da Internet executadas na AWS ou on-premises.
 
 ### CloudFront
@@ -199,16 +199,16 @@ Use para distribuir conteúdo com segurança, com baixa latência e altas veloci
 ### WAF
 Use para criar regras de segurança que controlam o tráfego de bots e bloqueiam padrões de ataque comuns, como injeção de SQL ou cross-site scripting (XSS).
 
-### Cloud Watch
+### ![Arch_Amazon-CloudWatch_32](https://github.com/user-attachments/assets/bf3a35da-8579-48aa-8517-3a46ad635865) Cloud Watch
 Use o CloudWatch para monitorar métricas, logs e desempenho dos recursos AWS, garantindo operação eficiente e identificando problemas da aplicação.
 
 ### Guard Duty
 Use para analisar todo o ambiente AWS em busca de possíveis ameaças, como IP's maliciosos.
 
-### Simple Email Service
+### ![Res_Amazon-Simple-Email-Service_Email_48](https://github.com/user-attachments/assets/caf6965f-ea98-41bf-992f-be3308459792) Simple Email Service
 Use para na aplicação para automação de e-mails de alto volume.
 
-### AWS Budgets
+### ![Arch_AWS-Budgets_32](https://github.com/user-attachments/assets/aa1cd7a7-443d-4f46-a7b4-eb3405f48143) AWS Budgets
 Use para definir orçamentos personalizados para rastrear os custos da empresa e para receber alertas via email, como um aviso de que o valor mensal chegou em $2.000,00.
 
 ### Requisitos de Segurança:
