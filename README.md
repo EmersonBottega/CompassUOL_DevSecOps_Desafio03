@@ -82,7 +82,7 @@ Para fazer a migração dos servidores de front-end e back-end:
 > [!Warning]
 > - Use um Replication Server: Servidores de replicação são instâncias do Amazon EC2 usadas para replicar dados entre os servidores de origem e a AWS.
 
-### ![Res_Amazon-Elastic-Block-Store_Multiple-Volumes_48](https://github.com/user-attachments/assets/dbb4adad-3fda-4710-a400-7c11c92bb21d) EBS
+### ![Arch_Amazon-Elastic-Block-Store_32](https://github.com/user-attachments/assets/af020bc9-9101-4a17-ad40-33e82004433d) EBS
 Use para oferecer desempenho consistente e escalabilidade. Os volumes podem ser redimensionados dinamicamente, permitindo que os usuários aumentem ou diminuam a capacidade de armazenamento conforme necessário.
 
 ### ![Res_Elastic-Load-Balancing_Application-Load-Balancer_48](https://github.com/user-attachments/assets/6ebfdb84-4166-4824-804c-39354cbebd72) Application Load Balancer
