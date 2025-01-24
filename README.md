@@ -62,7 +62,7 @@ Crie um usuário IAM para gerar as credenciais da AWS que serão usadas pelo AWS
 > [!Warning]
 > - Configure permissões mínimas necessárias para predefinir controles de permissão.
 
-### ![Res_AWS-Database-Migration-Service_Database-migration-workflow-or-job_48](https://github.com/user-attachments/assets/f8608a94-a137-4b46-a065-7a6853bd86b4) SCT/DMS
+### ![Arch_AWS-Database-Migration-Service_32](https://github.com/user-attachments/assets/fe88b2a6-fffe-4530-b706-1e8b3c045461) SCT/DMS
 Use o AWS SCT para migrar o esquema e ajustar os scripts SQL para que sejam compatíveis com o banco de destino. Após a conversão e ajuste dos esquemas, use o DMS para migrar os dados (e opcionalmente mantê-los sincronizados).
 
 ### ![Res_Amazon-Aurora-MySQL-Instance_48](https://github.com/user-attachments/assets/2787e9de-6725-4d28-8d16-d87805fc2239) RDS (MySql)
