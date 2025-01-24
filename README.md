@@ -57,7 +57,7 @@ Contendo:
 - 02 subnets públicas.
 - 02 subnets privadas.
 
-### ![Res_AWS-Identity-Access-Management_IAM-Roles-Anywhere_48](https://github.com/user-attachments/assets/31bf5f4a-7877-4243-a8b0-a8784bb496fd) Usuário IAM
+### ![Arch_AWS-IAM-Identity-Center_32](https://github.com/user-attachments/assets/08cf189c-b38c-4916-96e5-4ec32c10f1e3) Usuário IAM
 Crie um usuário IAM para gerar as credenciais da AWS que serão usadas pelo AWS Replication Agent. 
 > [!Warning]
 > - Configure permissões mínimas necessárias para predefinir controles de permissão.
@@ -162,7 +162,7 @@ Contendo:
 - 02 subnets públicas.
 - 02 subnets privadas.
 
-### ![Res_AWS-Identity-Access-Management_IAM-Roles-Anywhere_48](https://github.com/user-attachments/assets/31bf5f4a-7877-4243-a8b0-a8784bb496fd) Usuário IAM
+### ![Arch_AWS-IAM-Identity-Center_32](https://github.com/user-attachments/assets/08cf189c-b38c-4916-96e5-4ec32c10f1e3) Usuário IAM
 Crie um usuário IAM para gerar as credenciais da AWS que serão usadas pelo AWS Replication Agent. 
 > [!Warning]
 > - Configure permissões mínimas necessárias para predefinir controles de permissão.
@@ -182,10 +182,10 @@ Use o Application Load Balancer, pois ele pode direcionar o tráfego para difere
 > - Hosts (exemplo: api.example.com para o backend e example.com para o frontend).
 > - Cabeçalhos, cookies ou outros parâmetros.
 
-### ECR
+### ![Res_Amazon-Elastic-Container-Registry_Registry_48](https://github.com/user-attachments/assets/ac3cd11a-3d82-44d0-aa5c-be61d95e5a81) ECR
 Utilize como mediador para fazer a migração dos servidores front-end e back-end para o AWS EKS.
 
-### Elastic Kubernetes Service (EKS)
+### ![Res_Amazon-Elastic-Kubernetes-Service_EKS-on-Outposts_48](https://github.com/user-attachments/assets/dd02f9d4-ba34-41e7-8583-8db7019650b7) Elastic Kubernetes Service (EKS)
 Para um ambiente com Kubernetes:
 - Implemente policies no Kubernetes.
 - Configurar Network Policies e Secrets.
@@ -193,16 +193,16 @@ Para um ambiente com Kubernetes:
 ### ![Res_Amazon-Route-53_Readiness-Checks_48](https://github.com/user-attachments/assets/36b62ffe-ec76-4bdd-8285-4403158eb6bf) Route 53
 Use para conectar as requisições do usuário à aplicações da Internet executadas na AWS ou on-premises.
 
-### CloudFront
+### ![Arch_Amazon-CloudFront_32](https://github.com/user-attachments/assets/0c5d0c63-9686-4209-a990-e61f86742a54) CloudFront
 Use para distribuir conteúdo com segurança, com baixa latência e altas velocidades de transferência.
 
-### WAF
+### ![Arch_AWS-WAF_32](https://github.com/user-attachments/assets/98811761-9734-4d47-9a65-0fe44bb2a925) WAF
 Use para criar regras de segurança que controlam o tráfego de bots e bloqueiam padrões de ataque comuns, como injeção de SQL ou cross-site scripting (XSS).
 
 ### ![Arch_Amazon-CloudWatch_32](https://github.com/user-attachments/assets/bf3a35da-8579-48aa-8517-3a46ad635865) Cloud Watch
 Use o CloudWatch para monitorar métricas, logs e desempenho dos recursos AWS, garantindo operação eficiente e identificando problemas da aplicação.
 
-### Guard Duty
+### ![Arch_Amazon-GuardDuty_32](https://github.com/user-attachments/assets/6d04358a-a2ec-4e6c-8774-15171a28addb) Guard Duty
 Use para analisar todo o ambiente AWS em busca de possíveis ameaças, como IP's maliciosos.
 
 ### ![Res_Amazon-Simple-Email-Service_Email_48](https://github.com/user-attachments/assets/caf6965f-ea98-41bf-992f-be3308459792) Simple Email Service
