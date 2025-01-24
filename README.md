@@ -3,8 +3,8 @@
 # Visão Geral :monocle_face:
 
 ### Tecnologias Utilizadas 👩‍💻
-- Windows 10 (Sistema Operacional);
-- Draw.io (Desenho das arquiteturas);
+- Windows 10 (Sistema Operacional).
+- Draw.io (Desenho das arquiteturas).
 - AWS (Serviços de Cloud).
 
 ### Este repositório contém a arquitetura e instruções necessários para solucionar o problema da empresa "Fast Engineering".  
@@ -13,14 +13,14 @@
 
 #### Solução atual da empresa Fast Engineering:
 - 01 servidor para Banco de Dados Mysql (500GB de dados, 10Gb de RAM, 3
-Core CPU);
+Core CPU).
 
 - 01 servidor para a aplicação utilizando REACT – frontend (5GB de dados,
-2Gb de RAM, 1 Core CPU);
+2Gb de RAM, 1 Core CPU).
 
 - 01 servidor de backend com 3 APIs, com o Nginx servindo de balanceador de
 carga e que armazena estáticos como fotos e links. (5GB de dados, 4Gb de
-RAM, 2 Core CPU);
+RAM, 2 Core CPU).
 
 #### Arquitetura 🛠
 ![Diagrama on-premise](https://github.com/user-attachments/assets/262783ff-c1e3-4e4e-a0d5-a33602fa57c9)
@@ -35,10 +35,10 @@ RAM, 2 Core CPU);
 > [!Warning]
 > ### Etapa 2️⃣
 > ### Modernizar o sistema acima para AWS, seguindo as melhores práticas de arquitetura em Cloud AWS, e seguir as seguintes diretrizes:
-> - Ambiente Kubernetes;
-> - Banco de dados gerenciado (PaaS e Multi AZ);
-> - Backup de dados;
-> - Sistema para persistência de objetos (imagens, vídeos etc.);
+> - Ambiente Kubernetes.
+> - Banco de dados gerenciado (PaaS e Multi AZ).
+> - Backup de dados.
+> - Sistema para persistência de objetos (imagens, vídeos etc.).
 > - Segurança.
 
 # Solução :bulb:
@@ -46,45 +46,46 @@ RAM, 2 Core CPU);
 ### Arquitetura da Migração 🛠
 ![Etapa-1 Migrar](https://github.com/user-attachments/assets/9ec1fd53-d068-477f-a739-aeea30d85538)
 
-### Arquitetura do Ambiente 🛠
+### Arquitetura do Ambiente Modernizado 🛠
 ![Etapa-1 ambiente](https://github.com/user-attachments/assets/0d14a8d6-6bbd-4d7f-924a-1c58f527a288)
 
-### Passo 1 - VPC
+### Serviços da AWS utilizados:
+
+### VPC
 Configure uma VPC para usar nos serviços da AWS e para ter uma maior segurança. <br>
 Contendo:
 - 02 subnets públicas.
 - 02 subnets privadas.
 
-### Passo 2 - Security Groups
-Crie grupos de segurança personalizados para cada serviço que será utilizado, personalizando as regras de entrada e/ou saída.
-- Sendo os grupos para: EC2, Load Balancer, RDS, S3
-
-### Passo 3 - Usuário IAM
+### Usuário IAM
 Crie um usuário IAM para gerar as credenciais da AWS que serão usadas pelo AWS Replication Agent. 
 > [!Warning]
 > - Configure permissões mínimas necessárias para predefinir controles de permissão.
 
-### Passo 4 - SCT/DMS
+### SCT/DMS
 Use o AWS SCT para migrar o esquema e ajustar os scripts SQL para que sejam compatíveis com o banco de destino. Após a conversão e ajuste dos esquemas, use o DMS para migrar os dados (e opcionalmente mantê-los sincronizados).
 
-### Passo 5 - RDS (MySql)
+### RDS (MySql)
 Criar um bando de dados relacional para usar na migração e para a aplicação.
 - Crie um banco relacional MySql.
 - Habilite Multi-AZ.
 - Habilite backup automático.
 
-### Passo 6 - S3
+### S3
 Utilize para armazenar backups e arquivos estáticos da aplicação.
 
-### Passo 7 - MGN
+### MGN
 Para fazer a migração dos servidores de front-end e back-end:
 - No ambiente On-premise, instale o agente MGN nos servidores de front-end e back-end.
 - Configure os servidores de origem e destino.
 
-### Passo 8 - EBS
+### Replication Server
+Servidores de replicação são instâncias do Amazon EC2 usadas para replicar dados entre os servidores de origem e a AWS.
+
+### EBS
 Use para oferecer desempenho consistente e escalabilidade. Os volumes podem ser redimensionados dinamicamente, permitindo que os usuários aumentem ou diminuam a capacidade de armazenamento conforme necessário.
 
-### Passo 9 - Application Load Balancer
+### Application Load Balancer
 Use o Application Load Balancer, pois ele pode direcionar o tráfego para diferentes grupos de Auto Scaling.
 
 > [!Tip]
@@ -93,7 +94,7 @@ Use o Application Load Balancer, pois ele pode direcionar o tráfego para difere
 > - Hosts (exemplo: api.example.com para o backend e example.com para o frontend).
 > - Cabeçalhos, cookies ou outros parâmetros.
 
-### Passo 10 - Templates de EC2 e Auto Scaling Groups
+### Templates de EC2 e Auto Scaling Groups
 Para os servidores de front-end e back-end, crie duas templates que serão utilizadas no Auto Scaling com o intuito de garantir a escalabilidade automática das instâncias EC2.
 
 - Crie o primeiro template que será do back-end.
@@ -108,11 +109,17 @@ Para os servidores de front-end e back-end, crie duas templates que serão utili
 > [!Tip]
 > - Os dois Auto Scaling groups contém o mesmo Load Balancer.
 
-### Passo 11 - Cloud Watch
+### Route 53
+Use para conectar as requisições do usuário à aplicações da Internet executadas na AWS ou on-premises.
+
+### Cloud Watch
 Use o CloudWatch para monitorar métricas, logs e desempenho dos recursos AWS, garantindo operação eficiente e identificando problemas da aplicação.
 
-### Passo 12 - AWS Budgets
-Use para definir orçamentos personalizados para rastrear os custos da empresa, uso e para receber alertas via email, como um aviso de que o valor mensal chegou em $2.000,00.
+### Simple Email Service
+Use para na aplicação para automação de e-mails de alto volume.
+
+### AWS Budgets
+Use para definir orçamentos personalizados para rastrear os custos da empresa e para receber alertas via email, como um aviso de que o valor mensal chegou em $2.000,00.
 
 ### Requisitos de Segurança:
 - Configuração de VPC isolada com subnets públicas e privadas.
@@ -144,42 +151,29 @@ Use para definir orçamentos personalizados para rastrear os custos da empresa, 
 <b>OBS:</b> Mantendo os padrões citados na migração, porém adicionando um Application Load Balancer, CloudWatch e Budgets.
 
 ## Etapa 2️⃣
-### Arquitetura do Ambiente 🛠
+### Arquitetura do Ambiente Final pós migração com Kubernetes 🛠
 ![Etapa-2 ambiente](https://github.com/user-attachments/assets/2476150a-cf20-4706-a9b9-ac872b75bfad)
 
-### Passo 1 - VPC
+### Serviços da AWS utilizados:
+
+### VPC
 Configure uma VPC para usar nos serviços da AWS e para ter uma maior segurança. <br>
 Contendo:
 - 02 subnets públicas.
 - 02 subnets privadas.
 
-### Passo 2 - Usuário IAM
+### Usuário IAM
 Crie um usuário IAM para gerar as credenciais da AWS que serão usadas pelo AWS Replication Agent. 
 > [!Warning]
 > - Configure permissões mínimas necessárias para predefinir controles de permissão.
 
-### Passo 3 - SCT/DMS
-Use o AWS SCT para migrar o esquema e ajustar os scripts SQL para que sejam compatíveis com o banco de destino. Após a conversão e ajuste dos esquemas, use o DMS para migrar os dados (e opcionalmente mantê-los sincronizados).
-
-### Passo 4 - RDS (MySql)
+### RDS (MySql)
 Criar um bando de dados relacional para usar na migração e para a aplicação.
 - Crie um banco relacional MySql.
 - Habilite Multi-AZ.
 - Habilite backup automático.
 
-### Passo 5 - S3
-Utilize para armazenar backups e arquivos estáticos da aplicação.
-
-### Passo 6 - ECR
-Utilize como mediador para fazer a migração dos servidores front-end e back-end para o AWS EKS.
-
-### Passo 7 - MGN
-Para fazer a migração dos servidores de front-end e back-end:
-- Certifique-se de estar utilizando o ECR.
-- No ambiente On-premise, instale o agente MGN nos servidores de front-end e back-end.
-- Configure os servidores de origem e destino.
-
-### Passo 8 - Application Load Balancer
+### Application Load Balancer
 Use o Application Load Balancer, pois ele pode direcionar o tráfego para diferentes grupos de Auto Scaling.
 
 > [!Tip]
@@ -188,19 +182,34 @@ Use o Application Load Balancer, pois ele pode direcionar o tráfego para difere
 > - Hosts (exemplo: api.example.com para o backend e example.com para o frontend).
 > - Cabeçalhos, cookies ou outros parâmetros.
 
-### Passo 9 - Elastic Kubernetes Service
+### ECR
+Utilize como mediador para fazer a migração dos servidores front-end e back-end para o AWS EKS.
+
+### Elastic Kubernetes Service (EKS)
 Para um ambiente com Kubernetes:
 - Implemente policies no Kubernetes.
 - Configurar Network Policies e Secrets.
 
-### Passo 10 - Cloud Watch
+### Route 53
+Use para conectar as requisições do usuário à aplicações da Internet executadas na AWS ou on-premises.
+
+### CloudFront
+Use para distribuir conteúdo com segurança, com baixa latência e altas velocidades de transferência.
+
+### WAF
+Use para criar regras de segurança que controlam o tráfego de bots e bloqueiam padrões de ataque comuns, como injeção de SQL ou cross-site scripting (XSS).
+
+### Cloud Watch
 Use o CloudWatch para monitorar métricas, logs e desempenho dos recursos AWS, garantindo operação eficiente e identificando problemas da aplicação.
 
-### Passo 11 - Guard Duty
+### Guard Duty
 Use para analisar todo o ambiente AWS em busca de possíveis ameaças, como IP's maliciosos.
 
-### Passo 12 - AWS Budgets
-Use para definir orçamentos personalizados para rastrear os custos da empresa, uso e para receber alertas via email, como um aviso de que o valor mensal chegou em $2.000,00.
+### Simple Email Service
+Use para na aplicação para automação de e-mails de alto volume.
+
+### AWS Budgets
+Use para definir orçamentos personalizados para rastrear os custos da empresa e para receber alertas via email, como um aviso de que o valor mensal chegou em $2.000,00.
 
 ### Requisitos de Segurança:
 - VPC com subnets dedicadas ao EKS.
