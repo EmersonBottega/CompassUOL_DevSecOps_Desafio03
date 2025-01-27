@@ -244,3 +244,13 @@ Use para automatizar uma infraestrutura completa que abrange várias nuvens púb
 ## Parabéns! :tada:
 
 #### Você migrou e modernizou o ambiente físico para a AWS. :partying_face:
+
+### Material de Apoio:
+- [Skill Builder AWS MGN](https://explore.skillbuilder.aws/learn/courses/10343/aws-application-migration-service-aws-mgn-a-technical-introduction-portuguese)
+- [Skill Builder AWS DMS](https://explore.skillbuilder.aws/learn/courses/1915/introduction-to-database-migration-portuguese)
+- [Guia rápido MGN](https://docs.aws.amazon.com/mgn/latest/ug/quick-start-guide-gs.html)
+- [AWS MGN](https://aws.amazon.com/pt/application-migration-service/)
+- [AWS DMS](https://aws.amazon.com/pt/free/migration/?trk=f9a691dc-e56b-403d-afd7-2ec93b648109&sc_channel=ps&ef_id=Cj0KCQiA1p28BhCBARIsADP9HrMW8NLZvgrzSXSnDnGCPDA8iseKV9aeIj6ZWDo0HI95zyP4_eLjIuYaAt9SEALw_wcB:G:s&s_kwcid=AL!4422!3!536458578419!p!!g!!amazon%20cloud%20migration%20services!12025024241!119068084747)
+- [Diagrama referência: MGN](https://hidekazu-konishi.com/entry/aws_mgn_architecture_lifecycle_usage_notes.html)
+- [Diagrama referência: EKS](https://community.aws/content/2bk3y0c6TMCZzDAEndHcY6kqHs5/deploying-a-containerized-web-app-on-amazon-eks)
+- [Diagrama referência: EKS + GitHub + Terraform](https://awstip.com/step-by-step-guide-to-deploy-dockers-example-voting-app-on-aws-eks-using-github-actions-and-expose-132fdaafb09a)
