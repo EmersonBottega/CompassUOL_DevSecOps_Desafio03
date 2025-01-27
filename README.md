@@ -86,7 +86,7 @@ Para fazer a migração dos servidores de front-end e back-end:
 Use para oferecer desempenho consistente e escalabilidade. Os volumes podem ser redimensionados dinamicamente, permitindo que os usuários aumentem ou diminuam a capacidade de armazenamento conforme necessário.
 
 ### ![Res_Elastic-Load-Balancing_Application-Load-Balancer_48](https://github.com/user-attachments/assets/6ebfdb84-4166-4824-804c-39354cbebd72) Application Load Balancer
-Use o Application Load Balancer, pois ele pode direcionar o tráfego para diferentes grupos de Auto Scaling.
+Use o Application Load Balancer para direcionar o tráfego.
 
 > [!Tip]
 > #### 03 Estratégias para direcionar o tráfego: 
@@ -105,9 +105,9 @@ Para os servidores de front-end e back-end, crie duas templates que serão utili
 > [!Tip]
 > Configure na subnet pública.
 
-- Por último configure dois Auto Scaling groups, um com a template do back-end e o outro com a template do front-end.
+- Por último configure o Auto Scaling groups, com as templates criadas acima.
 > [!Tip]
-> Os dois Auto Scaling groups contém o mesmo Load Balancer.
+> O Auto Scaling groups contém o Application Load Balancer criado anteriormente.
 
 ### ![Res_Amazon-Route-53_Readiness-Checks_48](https://github.com/user-attachments/assets/36b62ffe-ec76-4bdd-8285-4403158eb6bf) Route 53
 Use para conectar as requisições do usuário à aplicações da Internet executadas na AWS ou on-premises.
@@ -174,7 +174,7 @@ Criar um bando de dados relacional para usar na migração e para a aplicação.
 - Habilite backup automático.
 
 ### ![Res_Elastic-Load-Balancing_Application-Load-Balancer_48](https://github.com/user-attachments/assets/6ebfdb84-4166-4824-804c-39354cbebd72) Application Load Balancer
-Use o Application Load Balancer, pois ele pode direcionar o tráfego para diferentes grupos de Auto Scaling.
+Use o Application Load Balancer para direcionamento de tráfego.
 
 > [!Tip]
 > #### 03 Estratégias para direcionar o tráfego: 
