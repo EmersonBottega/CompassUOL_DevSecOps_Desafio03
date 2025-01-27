@@ -44,10 +44,10 @@ RAM, 2 Core CPU).
 # Solução :bulb:
 ## Etapa 1️⃣
 ### Arquitetura da Migração 🛠
-![Etapa-1 Migrar](https://github.com/user-attachments/assets/9ec1fd53-d068-477f-a739-aeea30d85538)
+![Etapa-1 migrar](https://github.com/user-attachments/assets/b7ca7141-c238-4af1-9882-5cdaf245f27a)
 
 ### Arquitetura do Ambiente Modernizado 🛠
-![Etapa-1 ambiente](https://github.com/user-attachments/assets/0d14a8d6-6bbd-4d7f-924a-1c58f527a288)
+![Etapa-1 moderno](https://github.com/user-attachments/assets/4e8ab598-b5fd-4b9f-8057-b7c59754f45d)
 
 ### Serviços da AWS utilizados ☁
 
@@ -60,7 +60,7 @@ Contendo:
 ### ![Arch_AWS-IAM-Identity-Center_32](https://github.com/user-attachments/assets/08cf189c-b38c-4916-96e5-4ec32c10f1e3) Usuário IAM
 Crie um usuário IAM para gerar as credenciais da AWS que serão usadas pelo AWS Replication Agent. 
 > [!Warning]
-> - Configure permissões mínimas necessárias para predefinir controles de permissão.
+> Configure permissões mínimas necessárias para predefinir controles de permissão.
 
 ### ![Arch_AWS-Database-Migration-Service_32](https://github.com/user-attachments/assets/fe88b2a6-fffe-4530-b706-1e8b3c045461) SCT/DMS
 Use o AWS SCT para migrar o esquema e ajustar os scripts SQL para que sejam compatíveis com o banco de destino. Após a conversão e ajuste dos esquemas, use o DMS para migrar os dados (e opcionalmente mantê-los sincronizados).
@@ -80,7 +80,7 @@ Para fazer a migração dos servidores de front-end e back-end:
 - Configure os servidores de origem e destino.
 
 > [!Warning]
-> - Use um Replication Server: Servidores de replicação são instâncias do Amazon EC2 usadas para replicar dados entre os servidores de origem e a AWS.
+> Use um Replication Server: Servidores de replicação são instâncias do Amazon EC2 usadas para replicar dados entre os servidores de origem e a AWS.
 
 ### ![Arch_Amazon-Elastic-Block-Store_32](https://github.com/user-attachments/assets/af020bc9-9101-4a17-ad40-33e82004433d) EBS
 Use para oferecer desempenho consistente e escalabilidade. Os volumes podem ser redimensionados dinamicamente, permitindo que os usuários aumentem ou diminuam a capacidade de armazenamento conforme necessário.
@@ -99,15 +99,15 @@ Para os servidores de front-end e back-end, crie duas templates que serão utili
 
 - Crie o primeiro template que será do back-end.
 > [!Tip]
-> - Configure na subnet privada.
+> Configure na subnet privada.
 
 - Crie o segundo template que será do front-end.
 > [!Tip]
-> - Configure na subnet pública.
+> Configure na subnet pública.
 
 - Por último configure dois Auto Scaling groups, um com a template do back-end e o outro com a template do front-end.
 > [!Tip]
-> - Os dois Auto Scaling groups contém o mesmo Load Balancer.
+> Os dois Auto Scaling groups contém o mesmo Load Balancer.
 
 ### ![Res_Amazon-Route-53_Readiness-Checks_48](https://github.com/user-attachments/assets/36b62ffe-ec76-4bdd-8285-4403158eb6bf) Route 53
 Use para conectar as requisições do usuário à aplicações da Internet executadas na AWS ou on-premises.
@@ -152,7 +152,7 @@ Use para definir orçamentos personalizados para rastrear os custos da empresa e
 
 ## Etapa 2️⃣
 ### Arquitetura do Ambiente Final pós migração com Kubernetes 🛠
-![Etapa-2 ambiente](https://github.com/user-attachments/assets/2476150a-cf20-4706-a9b9-ac872b75bfad)
+![Etapa-2 final](https://github.com/user-attachments/assets/fe96d308-32b9-4c5d-bad4-96a7e35c508d)
 
 ### Serviços da AWS utilizados ☁
 
@@ -165,7 +165,7 @@ Contendo:
 ### ![Arch_AWS-IAM-Identity-Center_32](https://github.com/user-attachments/assets/08cf189c-b38c-4916-96e5-4ec32c10f1e3) Usuário IAM
 Crie um usuário IAM para gerar as credenciais da AWS que serão usadas pelo AWS Replication Agent. 
 > [!Warning]
-> - Configure permissões mínimas necessárias para predefinir controles de permissão.
+> Configure permissões mínimas necessárias para predefinir controles de permissão.
 
 ### ![Res_Amazon-Aurora-MySQL-Instance_48](https://github.com/user-attachments/assets/2787e9de-6725-4d28-8d16-d87805fc2239) RDS (MySql)
 Criar um bando de dados relacional para usar na migração e para a aplicação.
@@ -211,10 +211,14 @@ Use para na aplicação para automação de e-mails de alto volume.
 ### ![Arch_AWS-Budgets_32](https://github.com/user-attachments/assets/aa1cd7a7-443d-4f46-a7b4-eb3405f48143) AWS Budgets
 Use para definir orçamentos personalizados para rastrear os custos da empresa e para receber alertas via email, como um aviso de que o valor mensal chegou em $2.000,00.
 
+### ![terraform](https://github.com/user-attachments/assets/2c7037a2-850e-4388-8344-c24354557d10) Terraform
+Use para automatizar uma infraestrutura completa que abrange várias nuvens públicas e privadas, o terraform também usa arquivos de estado para armazenar informações sobre seus componentes de infraestrutura.
+
 ### Requisitos de Segurança:
 - VPC com subnets dedicadas ao EKS.
 - Configuração de ingressos com SSL no Load Balancer.
-- Policies de Kubernetes e monitoramento com CloudWatch.
+- Policies de Kubernetes e monitoramento com CloudWatch e GuardDuty.
+- Terraform para aumentar a segurança da infraestrutura.
 
 ### Processo de Backup:
 - Snapshots automáticos de RDS e EBS.
