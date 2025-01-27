@@ -144,11 +144,11 @@ Use para definir orçamentos personalizados para rastrear os custos da empresa e
 > [!Warning]
 > Na imagem acima, está o custo da migração na AWS, incluindo os preços individuais.
 
-#### Detalhes:
-- <b>VPC:</b> Configurada com NAT e IPv4 público, atendendo à arquitetura proposta;
-- <b>EC2:</b> Duas instâncias EC2 (Back-end e Front-end) do tipo "t3.medium" (2vCPU, Memory: 4 GiB). Caso seja necessário, você pode optar por aumentar a capacidade conforme sua necessidade;
-- <b>RDS:</b> Uma instância RDS para banco de dados MySQL, configurada como "db.t3.large" (vCPU: 2, Memory: 8 GiB) para priorizar economia. Para maior desempenho, recomendamos "db.t3.xlarge" (vCPU: 4, Memory: 16 GiB), que oferece mais memória RAM e CPU;
-- <b>S3:</b> Com capacidade de 500 GB;
+> [!Important]
+> - VPC: Configurada com NAT e IPv4 público, atendendo à arquitetura proposta;
+> - EC2: Duas instâncias EC2 (Back-end e Front-end) do tipo "t3.medium" (2vCPU, Memory: 4 GiB). Caso seja necessário, você pode optar por aumentar a capacidade conforme sua necessidade;
+> - RDS: Uma instância RDS para banco de dados MySQL, configurada como "db.t3.large" (vCPU: 2, Memory: 8 GiB) para priorizar economia. Para maior desempenho, recomendamos "db.t3.xlarge" (vCPU: 4, Memory: 16 GiB), que oferece mais memória RAM e CPU;
+> - S3: Com capacidade de 500 GB;
 
 ### Custo para manter ambiente AWS mensalmente:
 
@@ -238,4 +238,5 @@ Use para automatizar uma infraestrutura completa que abrange várias nuvens púb
 > [!Warning]
 > Na imagem acima, está o custo mensal do ambiente moderno, já com o uso de Kubernetes na AWS, incluindo os preços individuais.
 
-<b>Detalhes:</b> Substituindo as instâncias EC2 por um cluster Kubernetes utilizando o EKS combinado com o ECR. As máquinas, como RDS, e os serviços de armazenamento EBS e S3, permanecem iguais aos configurados no ambiente anterior. Agora, também foi adicionada a integração com o GuardDuty para reforçar a segurança.
+> [!Important]
+> Substituindo as instâncias EC2 por um cluster Kubernetes utilizando o EKS combinado com o ECR. As máquinas, como RDS, e os serviços de armazenamento EBS e S3, permanecem iguais aos configurados no ambiente anterior. Agora, também foi adicionada a integração com o GuardDuty para reforçar a segurança.
