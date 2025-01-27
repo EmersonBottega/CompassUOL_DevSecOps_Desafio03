@@ -116,7 +116,7 @@ Use para conectar as requisições do usuário à aplicações da Internet execu
 Use o CloudWatch para monitorar métricas, logs e desempenho dos recursos AWS, garantindo operação eficiente e identificando problemas da aplicação.
 
 ### ![Res_Amazon-Simple-Email-Service_Email_48](https://github.com/user-attachments/assets/caf6965f-ea98-41bf-992f-be3308459792) Simple Email Service
-Use para na aplicação para automação de e-mails de alto volume.
+Use na aplicação para automação de e-mails de alto volume.
 
 ### ![Arch_AWS-Budgets_32](https://github.com/user-attachments/assets/aa1cd7a7-443d-4f46-a7b4-eb3405f48143) AWS Budgets
 Use para definir orçamentos personalizados para rastrear os custos da empresa e para receber alertas via email, como um aviso de que o valor mensal chegou em $2.000,00.
@@ -206,13 +206,13 @@ Use o CloudWatch para monitorar métricas, logs e desempenho dos recursos AWS, g
 Use para analisar todo o ambiente AWS em busca de possíveis ameaças, como IP's maliciosos.
 
 ### ![Res_Amazon-Simple-Email-Service_Email_48](https://github.com/user-attachments/assets/caf6965f-ea98-41bf-992f-be3308459792) Simple Email Service
-Use para na aplicação para automação de e-mails de alto volume.
+Use na aplicação para automação de e-mails de alto volume.
 
 ### ![Arch_AWS-Budgets_32](https://github.com/user-attachments/assets/aa1cd7a7-443d-4f46-a7b4-eb3405f48143) AWS Budgets
 Use para definir orçamentos personalizados para rastrear os custos da empresa e para receber alertas via email, como um aviso de que o valor mensal chegou em $2.000,00.
 
 ### ![terraform](https://github.com/user-attachments/assets/2c7037a2-850e-4388-8344-c24354557d10) Terraform
-Use para automatizar uma infraestrutura completa que abrange várias nuvens públicas e privadas, o terraform também usa arquivos de estado para armazenar informações sobre seus componentes de infraestrutura.
+Use para automatizar uma infraestrutura completa que abrange várias nuvens públicas e privadas, o Terraform também usa arquivos de estado para armazenar informações sobre seus componentes de infraestrutura.
 
 ### Requisitos de Segurança:
 - VPC com subnets dedicadas ao EKS.
