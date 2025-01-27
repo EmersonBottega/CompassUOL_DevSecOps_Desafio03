@@ -134,7 +134,15 @@ Use para definir orçamentos personalizados para rastrear os custos da empresa e
 
 ### Custo da migração:
 
-![image](https://github.com/user-attachments/assets/fa279815-e50a-4a66-8062-ef6b2207c46e)
+![image](https://github.com/user-attachments/assets/b861781d-ceb8-4cee-b038-7dcf2c5e0dfb)
+
+![image](https://github.com/user-attachments/assets/db8a5488-04f0-4ae4-8c0a-113ecc4aaebd)
+
+> [!Warning]
+> Temos duas calculadoras: uma considerando o uso gratuito do MGN e outra para o caso de não haver mais gratuidade (levamos em consideração 14 dias consecutivos).
+
+> [!Warning]
+> Na imagem acima, está o custo da migração na AWS, incluindo os preços individuais.
 
 #### Detalhes:
 - <b>VPC:</b> Configurada com NAT e IPv4 público, atendendo à arquitetura proposta;
@@ -142,13 +150,12 @@ Use para definir orçamentos personalizados para rastrear os custos da empresa e
 - <b>RDS:</b> Uma instância RDS para banco de dados MySQL, configurada como "db.t3.large" (vCPU: 2, Memory: 8 GiB) para priorizar economia. Para maior desempenho, recomendamos "db.t3.xlarge" (vCPU: 4, Memory: 16 GiB), que oferece mais memória RAM e CPU;
 - <b>S3:</b> Com capacidade de 500 GB;
 
-<b>OBS:</b> O AWS Application Migration Service não possui custo no plano gratuito, que inclui 2.160 horas ou 90 dias de uso contínuo. Entretanto, os custos de recursos criados conforme necessário (como EC2, EBS, etc.) não estão incluídos. Por este motivo, já estamos estimando esses valores.
-
 ### Custo para manter ambiente AWS mensalmente:
 
-![image](https://github.com/user-attachments/assets/4cf5e9b9-60e9-4a48-96e6-00efb5e95f79)
+![image](https://github.com/user-attachments/assets/6bd48f8d-97b8-410d-81dc-039405bc4ab4)
 
-<b>OBS:</b> Mantendo os padrões citados na migração, porém adicionando um Application Load Balancer, CloudWatch e Budgets.
+> [!Warning]
+> Na imagem acima, está o custo mensal do ambiente pós migração na AWS, incluindo os preços individuais.
 
 ## Etapa 2️⃣
 ### Arquitetura do Ambiente Final pós migração com Kubernetes 🛠
@@ -226,6 +233,9 @@ Use para automatizar uma infraestrutura completa que abrange várias nuvens púb
 
 ## Preços de acordo com a AWS Pricing Calculator 💲
 
-![image](https://github.com/user-attachments/assets/18be134a-b75a-4f35-8d14-cf8a614a91ec)
+![image](https://github.com/user-attachments/assets/dba978c1-7284-49ca-a719-5734cca53059)
+
+> [!Warning]
+> Na imagem acima, está o custo mensal do ambiente moderno, já com o uso de Kubernetes na AWS, incluindo os preços individuais.
 
 <b>Detalhes:</b> Substituindo as instâncias EC2 por um cluster Kubernetes utilizando o EKS combinado com o ECR. As máquinas, como RDS, e os serviços de armazenamento EBS e S3, permanecem iguais aos configurados no ambiente anterior. Agora, também foi adicionada a integração com o GuardDuty para reforçar a segurança.
