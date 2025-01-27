@@ -240,3 +240,7 @@ Use para automatizar uma infraestrutura completa que abrange várias nuvens púb
 
 > [!Important]
 > Substituindo as instâncias EC2 por um cluster Kubernetes utilizando o EKS combinado com o ECR. As máquinas, como RDS, e os serviços de armazenamento EBS e S3, permanecem iguais aos configurados no ambiente anterior. Agora, também foi adicionada a integração com o GuardDuty para reforçar a segurança.
+
+## Parabéns! :tada:
+
+#### Você migrou e modernizou o ambiente físico para a AWS. :partying_face:
