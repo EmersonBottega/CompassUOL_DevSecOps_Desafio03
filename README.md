@@ -135,14 +135,12 @@ Use para definir orçamentos personalizados para rastrear os custos da empresa e
 ### Custo da migração:
 
 ![image](https://github.com/user-attachments/assets/b861781d-ceb8-4cee-b038-7dcf2c5e0dfb)
+> [!Warning]
+> A calculadora acima considera o uso gratuito do MGN, com o custo da migração incluindo os preços individuais.
 
 ![image](https://github.com/user-attachments/assets/db8a5488-04f0-4ae4-8c0a-113ecc4aaebd)
-
 > [!Warning]
-> Temos duas calculadoras: uma considerando o uso gratuito do MGN e outra para o caso de não haver mais gratuidade (levamos em consideração 14 dias consecutivos).
-
-> [!Warning]
-> Na imagem acima, está o custo da migração na AWS, incluindo os preços individuais.
+> Na imagem acima, considera-se o caso de não haver mais gratuidade do MGN (levamos em consideração 14 dias consecutivos), também está o custo da migração na AWS incluindo os preços individuais.
 
 > [!Important]
 > - VPC: Configurada com NAT e IPv4 público, atendendo à arquitetura proposta;
@@ -159,7 +157,7 @@ Use para definir orçamentos personalizados para rastrear os custos da empresa e
 
 ## Etapa 2️⃣
 ### Arquitetura do Ambiente Final pós migração com Kubernetes 🛠
-![Etapa-2 final](https://github.com/user-attachments/assets/fe96d308-32b9-4c5d-bad4-96a7e35c508d)
+![Etapa-2 final](https://github.com/user-attachments/assets/e6ef3c44-a3e3-4493-ac6c-6745c4a34897)
 
 ### Serviços da AWS utilizados ☁
 
