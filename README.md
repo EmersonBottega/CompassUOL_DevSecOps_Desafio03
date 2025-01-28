@@ -46,8 +46,8 @@ RAM, 2 Core CPU).
 ### Arquitetura da Migração 🛠
 ![Etapa-1 migrar](https://github.com/user-attachments/assets/b7ca7141-c238-4af1-9882-5cdaf245f27a)
 
-### Arquitetura do Ambiente Modernizado 🛠
-![Etapa-1 moderno](https://github.com/user-attachments/assets/4e8ab598-b5fd-4b9f-8057-b7c59754f45d)
+### Arquitetura do Ambiente na AWS 🛠
+![Etapa-1 aws](https://github.com/user-attachments/assets/d8261f5c-127c-4052-9172-dd4f63ef2a7e)
 
 ### Serviços da AWS utilizados ☁
 
