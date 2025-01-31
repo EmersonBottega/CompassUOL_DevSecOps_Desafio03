@@ -44,10 +44,10 @@ RAM, 2 Core CPU).
 # Solução :bulb:
 ## Etapa 1️⃣
 ### Arquitetura da Migração 🛠
-![Etapa-1 migrar](https://github.com/user-attachments/assets/b7ca7141-c238-4af1-9882-5cdaf245f27a)
+![image](https://github.com/user-attachments/assets/47b88ef3-bf36-40d4-a12b-b7824671e813)
 
 ### Arquitetura do Ambiente na AWS 🛠
-![Etapa-1 aws](https://github.com/user-attachments/assets/d8261f5c-127c-4052-9172-dd4f63ef2a7e)
+![image](https://github.com/user-attachments/assets/f83365d1-bf8b-4037-8482-424b781f9a78)
 
 ### Serviços da AWS utilizados ☁
 
@@ -61,6 +61,9 @@ Contendo:
 Crie um usuário IAM para gerar as credenciais da AWS que serão usadas pelo AWS Replication Agent. 
 > [!Warning]
 > Configure permissões mínimas necessárias para predefinir controles de permissão.
+
+### ![secrets](https://github.com/user-attachments/assets/e337c6dd-ea5d-446a-a350-81df191b8633) Secrets Manager
+Armazena e gerencia credenciais e segredos utilizados na aplicação com segurança.
 
 ### ![Arch_AWS-Database-Migration-Service_32](https://github.com/user-attachments/assets/fe88b2a6-fffe-4530-b706-1e8b3c045461) SCT/DMS
 Use o AWS SCT para migrar o esquema e ajustar os scripts SQL para que sejam compatíveis com o banco de destino. Após a conversão e ajuste dos esquemas, use o DMS para migrar os dados (e opcionalmente mantê-los sincronizados).
@@ -115,8 +118,8 @@ Use para conectar as requisições do usuário à aplicações da Internet execu
 ### ![Arch_Amazon-CloudWatch_32](https://github.com/user-attachments/assets/bf3a35da-8579-48aa-8517-3a46ad635865) Cloud Watch
 Use o CloudWatch para monitorar métricas, logs e desempenho dos recursos AWS, garantindo operação eficiente e identificando problemas da aplicação.
 
-### ![Res_Amazon-Simple-Email-Service_Email_48](https://github.com/user-attachments/assets/caf6965f-ea98-41bf-992f-be3308459792) Simple Email Service
-Use na aplicação para automação de e-mails de alto volume.
+### ![Sem título](https://github.com/user-attachments/assets/62950e73-9a60-4a87-ac5b-a7c4a826f7d1) Simple Notification Service
+Use na aplicação para automação de notificações via e-mail, SMS.
 
 ### ![Arch_AWS-Budgets_32](https://github.com/user-attachments/assets/aa1cd7a7-443d-4f46-a7b4-eb3405f48143) AWS Budgets
 Use para definir orçamentos personalizados para rastrear os custos da empresa e para receber alertas via email, como um aviso de que o valor mensal chegou em $2.000,00.
@@ -157,7 +160,7 @@ Use para definir orçamentos personalizados para rastrear os custos da empresa e
 
 ## Etapa 2️⃣
 ### Arquitetura do Ambiente Final pós migração com Kubernetes 🛠
-![Etapa-2 final](https://github.com/user-attachments/assets/e6ef3c44-a3e3-4493-ac6c-6745c4a34897)
+![Etapa-2 drawio](https://github.com/user-attachments/assets/14f6bf8b-1e75-4c3a-81f9-623fd7e657bb)
 
 ### Serviços da AWS utilizados ☁
 
@@ -171,6 +174,9 @@ Contendo:
 Crie um usuário IAM para gerar as credenciais da AWS que serão usadas pelo AWS Replication Agent. 
 > [!Warning]
 > Configure permissões mínimas necessárias para predefinir controles de permissão.
+
+### ![secrets](https://github.com/user-attachments/assets/e337c6dd-ea5d-446a-a350-81df191b8633) Secrets Manager
+Armazena e gerencia credenciais e segredos utilizados na aplicação com segurança.
 
 ### ![Res_Amazon-Aurora-MySQL-Instance_48](https://github.com/user-attachments/assets/2787e9de-6725-4d28-8d16-d87805fc2239) RDS (MySql)
 Criar um bando de dados relacional para usar na migração e para a aplicação.
@@ -210,8 +216,8 @@ Use o CloudWatch para monitorar métricas, logs e desempenho dos recursos AWS, g
 ### ![Arch_Amazon-GuardDuty_32](https://github.com/user-attachments/assets/6d04358a-a2ec-4e6c-8774-15171a28addb) Guard Duty
 Use para analisar todo o ambiente AWS em busca de possíveis ameaças, como IP's maliciosos.
 
-### ![Res_Amazon-Simple-Email-Service_Email_48](https://github.com/user-attachments/assets/caf6965f-ea98-41bf-992f-be3308459792) Simple Email Service
-Use na aplicação para automação de e-mails de alto volume.
+### ![Sem título](https://github.com/user-attachments/assets/62950e73-9a60-4a87-ac5b-a7c4a826f7d1) Simple Notification Service
+Use na aplicação para automação de notificações via e-mail, SMS.
 
 ### ![Arch_AWS-Budgets_32](https://github.com/user-attachments/assets/aa1cd7a7-443d-4f46-a7b4-eb3405f48143) AWS Budgets
 Use para definir orçamentos personalizados para rastrear os custos da empresa e para receber alertas via email, como um aviso de que o valor mensal chegou em $2.000,00.
